@@ -404,6 +404,42 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
     linear-gradient(160deg, var(--surface-2), var(--surface));
   background-blend-mode: overlay;
 }
+.pack-art-real {
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: none;
+  overflow: hidden;
+}
+.pack-art-real img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pack-footer-single { justify-content: flex-end; }
+
+.pack-card-empty {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--line);
+  display: flex;
+  flex-direction: column;
+}
+.pack-card-empty .pack-art {
+  background: repeating-linear-gradient(135deg, var(--surface) 0 8px, var(--surface-2) 8px 16px);
+  opacity: 0.5;
+}
+.pack-card-empty:hover { border-color: var(--line); transform: none; }
+.pack-coming {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  opacity: 0.6;
+  margin: 0.5rem 0 0.2rem;
+}
 .pack-genre {
   font-family: var(--font-mono);
   font-size: 0.7rem;
