@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Marcelo — Producción Musical</title>
+<meta name="description" content="Cursos de producción musical, sample packs y servicios de mixing y mastering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="waveform-bg" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a href="#home" class="logo">
+    <span class="logo-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+    ANGEL MARCELO
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav">
+    <a href="#home">Home</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#samples">Sample Packs</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#" class="nav-locked" title="Próximamente">Academia 🔒</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <p class="eyebrow">TRACK 01 — INTRO</p>
+    <h1>Angel Marcelo</h1>
+    <p class="hero-sub">Producción musical electrónica. Tech House &amp; Deep House.<br>Cursos, sample packs y servicios de estudio para llevar tus tracks al siguiente nivel.</p>
+    <div class="hero-cta">
+      <a href="#cursos" class="btn btn-primary">Ver cursos</a>
+      <a href="#samples" class="btn btn-outline">Sample Packs</a>
+    </div>
+    <div class="eq" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <!-- CURSOS -->
+  <section id="cursos" class="section">
+    <p class="eyebrow">TRACK 02 — CURSOS</p>
+    <h2>Curso de Producción Musical</h2>
+    <p class="section-intro">Un programa completo para pasar de una idea en tu cabeza a un track terminado, listo para tocar en set.</p>
+
+    <div class="course-card">
+      <div class="course-card-header">
+        <span class="badge">Próximamente</span>
+        <h3>Curso de Producción Musical — Tech &amp; Deep House</h3>
+      </div>
+
+      <div class="course-grid">
+        <div>
+          <h4>Programa</h4>
+          <ul class="check-list">
+            <li>Fundamentos de sound design y síntesis</li>
+            <li>Groove, ritmo y programación de batería</li>
+            <li>Arreglo y estructura de un track de club</li>
+            <li>Mixing dentro del proyecto</li>
+            <li>Preparación para mastering</li>
+          </ul>
+        </div>
+        <div>
+          <h4>FAQ</h4>
+          <details>
+            <summary>¿Necesito experiencia previa?</summary>
+            <p>No, el curso arranca desde los fundamentos y avanza de forma progresiva.</p>
+          </details>
+          <details>
+            <summary>¿Qué software voy a necesitar?</summary>
+            <p>Se recomienda un DAW (a confirmar cuál se usará como referencia en el curso).</p>
+          </details>
+          <details>
+            <summary>¿El curso tiene certificado?</summary>
+            <p>Detalle a confirmar antes del lanzamiento.</p>
+          </details>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-disabled" disabled>Comprar — próximamente</button>
+    </div>
+  </section>
+
+  <!-- SAMPLE PACKS -->
+  <section id="samples" class="section section-alt">
+    <p class="eyebrow">TRACK 03 — SAMPLE PACKS</p>
+    <h2>Sample Packs</h2>
+    <p class="section-intro">Loops, one-shots y presets listos para producir. Todos en 24-bit, sin royalties.</p>
+
+    <div class="filters" role="tablist" aria-label="Filtrar por género">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="tech-house">Tech House</button>
+      <button class="filter-btn" data-filter="deep-house">Deep House</button>
+    </div>
+
+    <div class="pack-grid" id="packGrid">
+      <article class="pack-card" data-genre="tech-house">
+        <div class="pack-art" aria-hidden="true"></div>
+        <p class="pack-genre">Tech House</p>
+        <h3>Tech House Vol. 1</h3>
+        <p class="pack-meta">120–126 BPM · Loops + One-shots</p>
+        <div class="pack-footer">
+          <span class="price">$19</span>
+          <button class="btn btn-small">Comprar</button>
+        </div>
+      </article>
+
+      <article class="pack-card" data-genre="deep-house">
+        <div class="pack-art" aria-hidden="true"></div>
+        <p class="pack-genre">Deep House</p>
+        <h3>Deep House Vol. 1</h3>
+        <p class="pack-meta">118–122 BPM · Loops + Chords</p>
+        <div class="pack-footer">
+          <span class="price">$19</span>
+          <button class="btn btn-small">Comprar</button>
+        </div>
+      </article>
+
+      <article class="pack-card" data-genre="tech-house">
+        <div class="pack-art" aria-hidden="true"></div>
+        <p class="pack-genre">Tech House</p>
+        <h3>Groove Tools</h3>
+        <p class="pack-meta">Percusión + Bajos</p>
+        <div class="pack-footer">
+          <span class="price">$15</span>
+          <button class="btn btn-small">Comprar</button>
+        </div>
+      </article>
+
+      <article class="pack-card" data-genre="deep-house">
+        <div class="pack-art" aria-hidden="true"></div>
+        <p class="pack-genre">Deep House</p>
+        <h3>Analog Pads</h3>
+        <p class="pack-meta">Presets + Texturas</p>
+        <div class="pack-footer">
+          <span class="price">$12</span>
+          <button class="btn btn-small">Comprar</button>
+        </div>
+      </article>
+    </div>
+    <p class="note">* Los botones "Comprar" aún no están conectados a un método de pago — se integrarán en una etapa posterior.</p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <p class="eyebrow">TRACK 04 — SERVICIOS</p>
+    <h2>Servicios</h2>
+    <p class="section-intro">Trabajo 1 a 1 con tu música, desde una idea suelta hasta el master final.</p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <p class="service-num">01</p>
+        <h3>Producción</h3>
+        <p>Desarrollo tu track de punta a punta, desde la idea hasta el arreglo final.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">02</p>
+        <h3>Mixing</h3>
+        <p>Balance, espacio y punch para que tu track suene sólido en cualquier sistema.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">03</p>
+        <h3>Mastering</h3>
+        <p>El toque final: loudness competitivo y coherencia entre plataformas.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">04</p>
+        <h3>Ghost Production</h3>
+        <p>Producción a medida, confidencial, para artistas que necesitan un track propio.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">05</p>
+        <h3>Clases 1:1</h3>
+        <p>Sesiones personalizadas enfocadas en lo que estés produciendo ahora mismo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="section section-alt">
+    <p class="eyebrow">TRACK 05 — SOBRE MÍ</p>
+    <h2>Sobre mí</h2>
+    <p class="section-intro bio">
+      Espacio para tu historia como productor: tu recorrido, referencias, sellos o releases,
+      y qué te llevó a producir Tech House y Deep House. (Editar con tu biografía real.)
+    </p>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <p class="eyebrow">TRACK 06 — CONTACTO</p>
+    <h2>Contacto</h2>
+    <p class="section-intro">¿Consultas sobre cursos, servicios o colaboraciones? Escribime.</p>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      <p class="note" id="formNote">* Este formulario todavía no envía datos — GitHub Pages no soporta backend. Más adelante se puede conectar a un servicio como Formspree.</p>
+    </form>
+
+    <div class="socials">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="YouTube">YouTube</a>
+      <a href="#" aria-label="SoundCloud">SoundCloud</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Angel Marcelo. Todos los derechos reservados.</p>
+  <p class="footer-note">Academia 🔒 y Mi cuenta 🔒 — próximamente, cuando el sitio pase a un hosting con backend.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
