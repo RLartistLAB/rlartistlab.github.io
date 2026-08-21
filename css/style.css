@@ -586,6 +586,7 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   display: flex;
   gap: 1.5rem;
   margin-top: 3rem;
+  justify-content: center;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -607,13 +608,13 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  padding-bottom: 3rem;
+  gap: 4rem;
+  padding-bottom: 3.5rem;
 }
 
 .footer-col h3 {
   font-size: 1.4rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 .footer-col .section-intro { margin-bottom: 1.5rem; }
 .footer-col .about-content { align-items: flex-start; }
