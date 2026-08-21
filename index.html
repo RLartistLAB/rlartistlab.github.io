@@ -23,14 +23,11 @@
     <span></span><span></span><span></span>
   </button>
   <nav class="site-nav" id="siteNav">
-    <a href="#home">Home</a>
     <a href="#cursos">Cursos</a>
-    <a href="#samples">Sample Packs</a>
-    <a href="#tutoriales">Tutoriales</a>
+    <a href="#samples">Samplepacks</a>
     <a href="#servicios">Servicios</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#" class="nav-locked" title="Próximamente">Academia 🔒</a>
+    <a href="#tutoriales">Tutoriales</a>
+    <a href="#" class="nav-locked" title="Próximamente">Mi Usuario 🔒</a>
   </nav>
 </header>
 
@@ -131,8 +128,44 @@
     <p class="note">* Los espacios en blanco son lugares reservados para próximos sample packs.</p>
   </section>
 
+
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <h2>Servicios</h2>
+    <p class="section-intro">Trabajo 1 a 1 con tu música, desde una idea suelta hasta el master final.</p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <p class="service-num">01</p>
+        <h3>Producción</h3>
+        <p>Desarrollo tu track de punta a punta, desde la idea hasta el arreglo final.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">02</p>
+        <h3>Mixing</h3>
+        <p>Balance, espacio y punch para que tu track suene sólido en cualquier sistema.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">03</p>
+        <h3>Mastering</h3>
+        <p>El toque final: loudness competitivo y coherencia entre plataformas.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">04</p>
+        <h3>Ghost Production</h3>
+        <p>Producción a medida, confidencial, para artistas que necesitan un track propio.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">05</p>
+        <h3>Clases 1:1</h3>
+        <p>Sesiones personalizadas enfocadas en lo que estés produciendo ahora mismo.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- TUTORIALES -->
-  <section id="tutoriales" class="section">
+  <section id="tutoriales" class="section section-alt">
     <h2>Tutoriales</h2>
     <p class="section-intro">Producción, teoría musical y mixing explicados paso a paso.</p>
 
@@ -170,87 +203,55 @@
     <p class="note">* Los videos redirigen por ahora al canal de YouTube — más adelante cada uno va a linkear a su video específico.</p>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="section">
-    <h2>Servicios</h2>
-    <p class="section-intro">Trabajo 1 a 1 con tu música, desde una idea suelta hasta el master final.</p>
-
-    <div class="service-grid">
-      <div class="service-card">
-        <p class="service-num">01</p>
-        <h3>Producción</h3>
-        <p>Desarrollo tu track de punta a punta, desde la idea hasta el arreglo final.</p>
-      </div>
-      <div class="service-card">
-        <p class="service-num">02</p>
-        <h3>Mixing</h3>
-        <p>Balance, espacio y punch para que tu track suene sólido en cualquier sistema.</p>
-      </div>
-      <div class="service-card">
-        <p class="service-num">03</p>
-        <h3>Mastering</h3>
-        <p>El toque final: loudness competitivo y coherencia entre plataformas.</p>
-      </div>
-      <div class="service-card">
-        <p class="service-num">04</p>
-        <h3>Ghost Production</h3>
-        <p>Producción a medida, confidencial, para artistas que necesitan un track propio.</p>
-      </div>
-      <div class="service-card">
-        <p class="service-num">05</p>
-        <h3>Clases 1:1</h3>
-        <p>Sesiones personalizadas enfocadas en lo que estés produciendo ahora mismo.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE MI -->
-  <section id="sobre-mi" class="section section-alt">
-    <h2>Sobre mí</h2>
-    <div class="about-content">
-      <div class="bio-photo">
-        <img src="img/angel-marcelo.png" alt="Angel Marcelo" loading="lazy">
-      </div>
-      <p class="section-intro bio">
-        Angel Marcelo: DJ y productor de Buenos Aires. Su sonido fusiona groove, bajos potentes y voces old-school entre los géneros House, Deep House y Tech House. Ha tocado en festivales de renombre como el Ultra Music Festival como también en los clubes más importantes del país, compartiendo cartel con referentes de la escena nacional e internacional. Sus tracks han sido editados en sellos de Argentina, España, Brasil y EE.UU. Algunos de sus trabajos fueron apoyados por nombres como Marco Carola, Joseph Capriati, Mau P, CID, DJs From Mars, entre otros, alcanzando el Top 100 de Beatport en Tech House en varias ocasiones. Hoy también forma a la próxima generación de productores como docente de FL Studio en ARJAUS.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="section">
-    <h2>Contacto</h2>
-    <p class="section-intro">¿Consultas sobre cursos, servicios o colaboraciones? Escribime.</p>
-
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required>
-      </div>
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-row">
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-      <p class="note" id="formNote">* Este formulario todavía no envía datos — GitHub Pages no soporta backend. Más adelante se puede conectar a un servicio como Formspree.</p>
-    </form>
-
-    <div class="socials">
-      <a href="https://www.instagram.com/angelmarcelok" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
-      <a href="https://youtube.com/@angelmarcelok?si=J-r5mSdA6JVuKHoa" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
-      <a href="https://soundcloud.com/angelmarcelo" target="_blank" rel="noopener" aria-label="SoundCloud">SoundCloud</a>
-    </div>
-  </section>
-
 </main>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> Angel Marcelo. Todos los derechos reservados.</p>
-  <p class="footer-note">Academia 🔒 y Mi cuenta 🔒 — próximamente, cuando el sitio pase a un hosting con backend.</p>
+<footer class="site-footer-main">
+  <div class="footer-grid">
+    <div class="footer-col" id="sobre-mi">
+      <h3>Sobre mí</h3>
+      <div class="about-content">
+        <div class="bio-photo">
+          <img src="img/angel-marcelo.png" alt="Angel Marcelo" loading="lazy">
+        </div>
+        <p class="section-intro bio">
+          Angel Marcelo: DJ y productor de Buenos Aires. Su sonido fusiona groove, bajos potentes y voces old-school entre los géneros House, Deep House y Tech House. Ha tocado en festivales de renombre como el Ultra Music Festival como también en los clubes más importantes del país, compartiendo cartel con referentes de la escena nacional e internacional. Sus tracks han sido editados en sellos de Argentina, España, Brasil y EE.UU. Algunos de sus trabajos fueron apoyados por nombres como Marco Carola, Joseph Capriati, Mau P, CID, DJs From Mars, entre otros, alcanzando el Top 100 de Beatport en Tech House en varias ocasiones. Hoy también forma a la próxima generación de productores como docente de FL Studio en ARJAUS.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-col" id="contacto">
+      <h3>Contacto</h3>
+      <p class="section-intro">¿Consultas sobre cursos, servicios o colaboraciones? Escribime.</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <p class="note" id="formNote">* Este formulario todavía no envía datos — GitHub Pages no soporta backend. Más adelante se puede conectar a un servicio como Formspree.</p>
+      </form>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/angelmarcelok" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="https://youtube.com/@angelmarcelok?si=J-r5mSdA6JVuKHoa" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+        <a href="https://soundcloud.com/angelmarcelo" target="_blank" rel="noopener" aria-label="SoundCloud">SoundCloud</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Angel Marcelo. Todos los derechos reservados.</p>
+    <p class="footer-note">Mi Usuario 🔒 — próximamente, cuando el sitio pase a un hosting con backend.</p>
+  </div>
 </footer>
 
 <script src="js/script.js"></script>
