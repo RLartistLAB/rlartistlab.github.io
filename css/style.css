@@ -8,8 +8,8 @@
   --line: #332c22;
   --text: #f2ede4;
   --text-dim: #a89e8f;
-  --amber: #e8a33d;
-  --amber-dim: #7a5a26;
+  --amber: #d6d6d1;
+  --amber-dim: #4a4a47;
   --teal: #4fc9c0;
 
   --font-display: "Space Grotesk", sans-serif;
@@ -52,7 +52,7 @@ a { color: inherit; }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(232,163,61,0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,255,255,0.05), transparent),
     radial-gradient(ellipse 60% 40% at 90% 30%, rgba(79,201,192,0.05), transparent);
 }
 
@@ -202,9 +202,9 @@ a { color: inherit; }
 
 .btn-primary {
   background: var(--amber);
-  color: #1a1200;
+  color: #141414;
 }
-.btn-primary:hover { background: #f2b657; }
+.btn-primary:hover { background: #eaeae6; }
 
 .btn-outline {
   background: transparent;
@@ -380,7 +380,7 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   transition: all 0.2s;
 }
 .filter-btn:hover { border-color: var(--teal); color: var(--teal); }
-.filter-btn.active { background: var(--amber); border-color: var(--amber); color: #1a1200; }
+.filter-btn.active { background: var(--amber); border-color: var(--amber); color: #141414; }
 
 .pack-grid {
   display: grid;
@@ -541,7 +541,7 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--amber-dim);
-  box-shadow: 0 0 0 6px rgba(232, 163, 61, 0.08);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.06);
 }
 .bio-photo img {
   width: 100%;
