@@ -286,7 +286,8 @@ a { color: inherit; }
 .hero-cta .btn.btn-highlight {
   transform: translateY(-2px);
 }
-.hero-cta .btn-outline.btn-highlight {
+.hero-cta .btn-outline.btn-highlight,
+.hero-cta .btn-outline.btn-active {
   background: var(--amber);
   border-color: var(--amber);
   color: #141414;
@@ -476,6 +477,8 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   aspect-ratio: 1 / 1;
   background: none;
   overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
 .pack-art-real img {
   width: 100%;
@@ -483,6 +486,21 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   object-fit: cover;
   display: block;
 }
+.preview-hint {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.6rem 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.pack-art-real:hover .preview-hint { opacity: 1; }
 .pack-footer-single { justify-content: flex-end; }
 
 .pack-card-empty {

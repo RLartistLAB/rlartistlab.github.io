@@ -55,3 +55,35 @@ heroHighlights.forEach(span => {
   span.addEventListener('mouseenter', () => targetBtn.classList.add('btn-highlight'));
   span.addEventListener('mouseleave', () => targetBtn.classList.remove('btn-highlight'));
 });
+
+// Marcar como "seleccionado" (blanco) el botón del hero en el que se hace clic
+const heroCtaButtons = document.querySelectorAll('.hero-cta .btn');
+
+heroCtaButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    heroCtaButtons.forEach(b => b.classList.remove('btn-active'));
+    btn.classList.add('btn-active');
+  });
+});
+
+// Preview de audio (SoundCloud) al pasar el mouse sobre la portada del sample pack
+document.querySelectorAll('.pack-art-real[data-track]').forEach(art => {
+  let iframe = null;
+
+  art.addEventListener('mouseenter', () => {
+    if (iframe) return;
+    const trackUrl = encodeURIComponent(art.dataset.track);
+    iframe = document.createElement('iframe');
+    iframe.setAttribute('allow', 'autoplay');
+    iframe.style.cssText = 'position:absolute; width:0; height:0; border:0; opacity:0; pointer-events:none;';
+    iframe.src = `https://w.soundcloud.com/player/?url=${trackUrl}&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false`;
+    art.appendChild(iframe);
+  });
+
+  art.addEventListener('mouseleave', () => {
+    if (iframe) {
+      iframe.remove();
+      iframe = null;
+    }
+  });
+});
