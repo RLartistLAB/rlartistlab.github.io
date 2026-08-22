@@ -40,7 +40,7 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 700;
-  margin: 0 0 0.4em;
+  margin: 0 0 0.6rem;
   letter-spacing: -0.01em;
 }
 
@@ -681,7 +681,7 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
 .socials {
   display: flex;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 0;
   justify-content: flex-start;
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -712,7 +712,7 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   font-size: 1.4rem;
   margin-bottom: 1.4rem;
 }
-.footer-col .section-intro { margin-bottom: 1.5rem; }
+.footer-col .section-intro { margin-bottom: 2rem; }
 .footer-col .about-content { align-items: flex-start; }
 
 .footer-bottom {
