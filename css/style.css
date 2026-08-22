@@ -389,6 +389,8 @@ a { color: inherit; }
   border-top: 1px solid var(--line);
   align-items: start;
 }
+.course-summary-col { order: 1; }
+.course-faq-col { order: 2; }
 
 /* Columna izquierda: FAQ compacta */
 .course-faq-col h4 {
@@ -462,9 +464,9 @@ a { color: inherit; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 1.2rem;
-  max-width: min(92vw, 640px);
-  max-height: 90vh;
+  padding: 1.5rem;
+  max-width: min(92vw, 980px);
+  max-height: 94vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -492,7 +494,7 @@ a { color: inherit; }
 }
 .pdf-viewer img {
   max-width: 100%;
-  max-height: 72vh;
+  max-height: 80vh;
   object-fit: contain;
   user-select: none;
   pointer-events: none;
