@@ -44,3 +44,14 @@ contactForm.addEventListener('submit', (e) => {
   formNote.textContent = '¡Gracias! Este formulario aún no está conectado a un servicio de envío — se activará en una próxima etapa.';
   formNote.style.color = 'var(--teal)';
 });
+
+// Resaltar el botón del hero correspondiente al pasar el mouse por el texto
+const heroHighlights = document.querySelectorAll('.hero-detail .hl');
+
+heroHighlights.forEach(span => {
+  const targetBtn = document.getElementById(span.dataset.target);
+  if (!targetBtn) return;
+
+  span.addEventListener('mouseenter', () => targetBtn.classList.add('btn-highlight'));
+  span.addEventListener('mouseleave', () => targetBtn.classList.remove('btn-highlight'));
+});

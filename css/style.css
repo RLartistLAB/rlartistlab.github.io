@@ -256,6 +256,44 @@ a { color: inherit; }
   50% { height: 100%; }
 }
 
+/* hero detail block + interactive highlight */
+.hero-detail {
+  margin-top: 3rem;
+  max-width: 640px;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--line);
+}
+.hero-detail h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  margin-bottom: 0.9rem;
+}
+.hero-detail p {
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+.hero-detail .hl {
+  color: var(--text);
+  border-bottom: 1px dotted var(--amber-dim);
+  cursor: default;
+  transition: color 0.2s, border-color 0.2s;
+}
+.hero-detail .hl:hover {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+.hero-cta .btn.btn-highlight {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+}
+.hero-cta .btn-outline.btn-highlight {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
 /* ============================================
    SECTIONS
    ============================================ */
