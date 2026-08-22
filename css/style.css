@@ -258,10 +258,8 @@ a { color: inherit; }
 
 /* hero detail block + interactive highlight */
 .hero-detail {
-  margin-top: 3rem;
+  margin: 1.8rem 0 2.4rem;
   max-width: 640px;
-  padding-top: 2.2rem;
-  border-top: 1px solid var(--line);
 }
 .hero-detail h2 {
   font-size: 1.05rem;
