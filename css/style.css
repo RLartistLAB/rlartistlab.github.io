@@ -315,15 +315,6 @@ a { color: inherit; }
 
 .section h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 
-.section-header-row {
-  display: flex;
-  align-items: baseline;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-}
-.section-header-row h2 { margin-bottom: 0; }
-.section-header-row .section-intro { margin-bottom: 0; }
-
 .section-intro {
   color: var(--text-dim);
   max-width: 55ch;
@@ -773,6 +764,7 @@ a { color: inherit; }
   width: 100%;
   justify-content: space-between;
   margin-top: 0;
+  margin-left: calc(150px + 2.2rem);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -844,13 +836,13 @@ a:focus-visible, button:focus-visible {
   .tutorial-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
   .level-grid { grid-template-columns: 1fr; }
-  .section-header-row { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
   .course-info-grid { grid-template-columns: 1fr; gap: 2rem; }
   .course-summary-col { order: 1; }
   .course-faq-col { order: 2; }
   .pdf-modal-content { max-width: 94vw; padding: 1rem; }
   .pdf-viewer img { max-height: 60vh; }
   .footer-col .about-content { flex-direction: column; align-items: center; text-align: center; }
+  .footer-col .socials { margin-left: 0; }
   .footer-col .about-content .section-intro { margin-left: auto; margin-right: auto; }
   .about-content { flex-direction: column; align-items: center; text-align: center; }
   .about-content .section-intro { margin-left: auto; margin-right: auto; }
