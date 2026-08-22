@@ -671,8 +671,8 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
 .socials {
   display: flex;
   gap: 1.5rem;
-  margin-top: 3rem;
-  justify-content: center;
+  margin-top: 2rem;
+  justify-content: flex-start;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -745,6 +745,7 @@ a:focus-visible, button:focus-visible {
   .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
   .level-grid { grid-template-columns: 1fr; }
   .footer-col .about-content { flex-direction: column; align-items: center; text-align: center; }
+  .footer-col .socials { justify-content: center; }
   .footer-col .about-content .section-intro { margin-left: auto; margin-right: auto; }
   .about-content { flex-direction: column; align-items: center; text-align: center; }
   .about-content .section-intro { margin-left: auto; margin-right: auto; }
