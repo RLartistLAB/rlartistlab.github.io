@@ -97,3 +97,59 @@ document.querySelectorAll('.pack-art-real[data-track]').forEach(art => {
     playBtn.setAttribute('aria-label', 'Pausar demo');
   });
 });
+
+// Visor interno del programa (Cursos) — sin descarga directa del PDF
+const pdfModal = document.getElementById('pdfModal');
+const pdfPageImg = document.getElementById('pdfPageImg');
+const pdfPageIndicator = document.getElementById('pdfPageIndicator');
+const btnVerPrograma = document.getElementById('btnVerPrograma');
+const totalPdfPages = 8;
+let currentPdfPage = 1;
+
+function renderPdfPage() {
+  pdfPageImg.src = `img/programa/pagina-${currentPdfPage}.jpg`;
+  pdfPageIndicator.textContent = `${currentPdfPage} / ${totalPdfPages}`;
+}
+
+function openPdfModal() {
+  currentPdfPage = 1;
+  renderPdfPage();
+  pdfModal.classList.add('open');
+  pdfModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePdfModal() {
+  pdfModal.classList.remove('open');
+  pdfModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (btnVerPrograma) {
+  btnVerPrograma.addEventListener('click', openPdfModal);
+}
+
+pdfModal.querySelectorAll('[data-pdf-close]').forEach(el => {
+  el.addEventListener('click', closePdfModal);
+});
+
+document.getElementById('pdfPrev').addEventListener('click', () => {
+  if (currentPdfPage > 1) {
+    currentPdfPage--;
+    renderPdfPage();
+  }
+});
+
+document.getElementById('pdfNext').addEventListener('click', () => {
+  if (currentPdfPage < totalPdfPages) {
+    currentPdfPage++;
+    renderPdfPage();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!pdfModal.classList.contains('open')) return;
+  if (e.key === 'Escape') closePdfModal();
+  if (e.key === 'ArrowLeft' && currentPdfPage > 1) { currentPdfPage--; renderPdfPage(); }
+  if (e.key === 'ArrowRight' && currentPdfPage < totalPdfPages) { currentPdfPage++; renderPdfPage(); }
+});

@@ -167,14 +167,16 @@ a { color: inherit; }
 .hero h1 {
   font-size: clamp(2.6rem, 7vw, 5rem);
   line-height: 0.95;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .hero-sub {
-  max-width: 46ch;
-  color: var(--text-dim);
-  font-size: 1.05rem;
-  margin-bottom: 2rem;
+  max-width: 50ch;
+  color: var(--text);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.55;
+  margin-bottom: 2.8rem;
 }
 
 .hero-cta {
@@ -261,8 +263,8 @@ a { color: inherit; }
 
 /* hero detail block + interactive highlight */
 .hero-detail {
-  margin: 1.8rem 0 2.4rem;
-  max-width: 640px;
+  margin: 0 0 2.4rem;
+  max-width: 680px;
 }
 .hero-detail h2 {
   font-size: 1.05rem;
@@ -273,8 +275,8 @@ a { color: inherit; }
 }
 .hero-detail p {
   color: var(--text-dim);
-  font-size: 0.98rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 .hero-detail .hl {
   cursor: default;
@@ -378,12 +380,47 @@ a { color: inherit; }
   margin: 0;
 }
 
+.course-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+
+/* Columna izquierda: FAQ compacta */
+.course-faq-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  margin-bottom: 0.7rem;
+}
+.course-faq-col details {
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 0;
+}
+.course-faq-col summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.course-faq-col details p {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0.4rem 0 0;
+}
+
+/* Columna derecha: resumen, precio y CTAs */
 .course-meta {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   color: var(--text-dim);
-  border-top: 1px solid var(--line);
-  padding-top: 1.2rem;
   margin-bottom: 0.8rem;
 }
 .course-price {
@@ -396,35 +433,79 @@ a { color: inherit; }
   color: var(--amber);
   font-size: 0.88rem;
 }
-
 .course-cta {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.course-faq {
-  margin-top: 2.5rem;
-  max-width: 640px;
+/* ============================================
+   VISOR DE PROGRAMA (MODAL)
+   ============================================ */
+.pdf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
-.course-faq h4 {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--teal);
-  margin-bottom: 0.9rem;
+.pdf-modal.open { display: flex; }
+.pdf-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
 }
-details {
-  border-bottom: 1px solid var(--line);
-  padding: 0.7rem 0;
+.pdf-modal-content {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.2rem;
+  max-width: min(92vw, 640px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-summary {
+.pdf-modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 0.92rem;
-  font-weight: 500;
+  font-size: 0.9rem;
 }
-details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
+.pdf-viewer {
+  overflow: hidden;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+.pdf-viewer img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+}
+.pdf-modal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
 
 /* ============================================
    SAMPLE PACKS
@@ -754,6 +835,11 @@ a:focus-visible, button:focus-visible {
   .tutorial-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
   .level-grid { grid-template-columns: 1fr; }
+  .course-info-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .course-summary-col { order: 1; }
+  .course-faq-col { order: 2; }
+  .pdf-modal-content { max-width: 94vw; padding: 1rem; }
+  .pdf-viewer img { max-height: 60vh; }
   .footer-col .about-content { flex-direction: column; align-items: center; text-align: center; }
   .footer-col .socials { justify-content: center; }
   .footer-col .about-content .section-intro { margin-left: auto; margin-right: auto; }

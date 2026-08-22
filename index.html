@@ -83,29 +83,33 @@
         </div>
       </div>
 
-      <p class="course-meta">18 clases de 1,5 h · 4 meses · 100% online · seguimiento personalizado</p>
-      <p class="course-price">Desde AR$ 235.000/mes <span class="price-off">· 15% OFF para ex alumnos</span></p>
+      <div class="course-info-grid">
+        <div class="course-faq-col">
+          <h4>Preguntas frecuentes</h4>
+          <details>
+            <summary>¿Necesito experiencia previa?</summary>
+            <p>No. Elegimos el nivel según tu punto de partida.</p>
+          </details>
+          <details>
+            <summary>¿Cómo son las clases?</summary>
+            <p>18 clases individuales de 1,5 h por Zoom, con seguimiento personalizado.</p>
+          </details>
+          <details>
+            <summary>¿Puedo hacer un solo nivel?</summary>
+            <p>Sí. Cada nivel es independiente o puede formar parte del recorrido anual.</p>
+          </details>
+        </div>
 
-      <div class="course-cta">
-        <a href="docs/creator-360-coaching-programa-2026.pdf" target="_blank" rel="noopener" class="btn btn-outline">Ver programa completo</a>
-        <a href="#contacto" class="btn btn-primary">Reservar una llamada</a>
+        <div class="course-summary-col">
+          <p class="course-meta">18 clases de 1,5 h · 4 meses · 100% online · seguimiento personalizado</p>
+          <p class="course-price">Desde AR$ 235.000/mes <span class="price-off">· 15% OFF para ex alumnos</span></p>
+
+          <div class="course-cta">
+            <button type="button" class="btn btn-primary btn-disabled" disabled>Comprar - Próximamente</button>
+            <button type="button" class="btn btn-outline" id="btnVerPrograma">Ver programa completo</button>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="course-faq">
-      <h4>Preguntas frecuentes</h4>
-      <details>
-        <summary>¿Necesito experiencia previa?</summary>
-        <p>No. Elegimos el nivel según tu punto de partida.</p>
-      </details>
-      <details>
-        <summary>¿Cómo son las clases?</summary>
-        <p>18 clases individuales de 1,5 h por Zoom, con seguimiento personalizado.</p>
-      </details>
-      <details>
-        <summary>¿Puedo hacer un solo nivel?</summary>
-        <p>Sí. Cada nivel es independiente o puede formar parte del recorrido anual.</p>
-      </details>
     </div>
   </section>
 
@@ -270,6 +274,21 @@
     <p>© <span id="year"></span> Angel Marcelo. Todos los derechos reservados.</p>
   </div>
 </footer>
+
+<div class="pdf-modal" id="pdfModal" aria-hidden="true">
+  <div class="pdf-modal-backdrop" data-pdf-close></div>
+  <div class="pdf-modal-content" role="dialog" aria-modal="true" aria-label="Programa completo — Creator 360 Coaching">
+    <button type="button" class="pdf-modal-close" data-pdf-close aria-label="Cerrar visor">✕</button>
+    <div class="pdf-viewer">
+      <img src="img/programa/pagina-1.jpg" alt="Página del programa Creator 360 Coaching" id="pdfPageImg" draggable="false" oncontextmenu="return false">
+    </div>
+    <div class="pdf-modal-nav">
+      <button type="button" class="btn btn-small" id="pdfPrev">← Anterior</button>
+      <span class="pdf-page-indicator" id="pdfPageIndicator">1 / 8</span>
+      <button type="button" class="btn btn-small" id="pdfNext">Siguiente →</button>
+    </div>
+  </div>
+</div>
 
 <script src="js/script.js"></script>
 </body>
