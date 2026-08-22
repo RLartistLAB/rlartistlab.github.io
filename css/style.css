@@ -479,7 +479,6 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   background: none;
   overflow: hidden;
   position: relative;
-  cursor: pointer;
 }
 .pack-art-real img {
   width: 100%;
@@ -487,21 +486,32 @@ details p { color: var(--text-dim); font-size: 0.88rem; margin: 0.6rem 0 0; }
   object-fit: cover;
   display: block;
 }
-.preview-hint {
+.preview-play {
   position: absolute;
-  inset: auto 0 0 0;
-  padding: 0.6rem 0;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 20, 20, 0.65);
   color: var(--text);
-  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, background 0.2s, transform 0.15s;
 }
-.pack-art-real:hover .preview-hint { opacity: 1; }
+.pack-art-real:hover .preview-play { opacity: 1; }
+.preview-play:hover { background: var(--amber); color: #141414; transform: scale(1.06); }
+.preview-play.is-playing { opacity: 1; background: var(--amber); color: #141414; }
+
+/* En dispositivos táctiles (sin hover) el botón queda siempre visible */
+@media (hover: none) {
+  .preview-play { opacity: 1; }
+}
 .pack-footer-single { justify-content: flex-end; }
 
 .pack-card-empty {

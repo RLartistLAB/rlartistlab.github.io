@@ -66,24 +66,34 @@ heroCtaButtons.forEach(btn => {
   });
 });
 
-// Preview de audio (SoundCloud) al pasar el mouse sobre la portada del sample pack
+// Preview de audio (SoundCloud): botón de play manual sobre la portada del sample pack
 document.querySelectorAll('.pack-art-real[data-track]').forEach(art => {
+  const playBtn = art.querySelector('.preview-play');
   let iframe = null;
 
-  art.addEventListener('mouseenter', () => {
-    if (iframe) return;
+  playBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (iframe) {
+      // Ya está sonando: lo detenemos
+      iframe.remove();
+      iframe = null;
+      playBtn.classList.remove('is-playing');
+      playBtn.textContent = '▶';
+      playBtn.setAttribute('aria-label', 'Reproducir demo');
+      return;
+    }
+
+    // No está sonando: lo arrancamos
     const trackUrl = encodeURIComponent(art.dataset.track);
     iframe = document.createElement('iframe');
     iframe.setAttribute('allow', 'autoplay');
     iframe.style.cssText = 'position:absolute; width:0; height:0; border:0; opacity:0; pointer-events:none;';
     iframe.src = `https://w.soundcloud.com/player/?url=${trackUrl}&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false`;
     art.appendChild(iframe);
-  });
-
-  art.addEventListener('mouseleave', () => {
-    if (iframe) {
-      iframe.remove();
-      iframe = null;
-    }
+    playBtn.classList.add('is-playing');
+    playBtn.textContent = '❚❚';
+    playBtn.setAttribute('aria-label', 'Pausar demo');
   });
 });
