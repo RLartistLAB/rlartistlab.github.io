@@ -95,7 +95,6 @@ a { color: inherit; }
   width: 3px;
   background: var(--amber);
   border-radius: 1px;
-  animation: bar-bounce 1.2s ease-in-out infinite;
 }
 .logo-bars i:nth-child(1) { height: 40%; animation-delay: 0s; }
 .logo-bars i:nth-child(2) { height: 90%; animation-delay: 0.15s; }
