@@ -273,14 +273,11 @@ a { color: inherit; }
   line-height: 1.7;
 }
 .hero-detail .hl {
-  color: var(--text);
-  border-bottom: 1px dotted var(--amber-dim);
   cursor: default;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s;
 }
 .hero-detail .hl:hover {
   color: var(--amber);
-  border-bottom-color: var(--amber);
 }
 .hero-cta .btn.btn-highlight {
   transform: translateY(-2px);
