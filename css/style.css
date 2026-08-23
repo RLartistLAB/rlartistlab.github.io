@@ -1,16 +1,33 @@
 /* ============================================
-   ANGEL MARCELO — TOKENS
+   RL ARTIST LAB — SISTEMA DE COLOR
+   ============================================
+   Base oscura neutra (bajo cansancio visual, alto contraste,
+   estética de estudio/laboratorio) + un único acento cian/teal
+   para TODO elemento interactivo secundario (links, hover, tags,
+   filtros) y un blanco casi puro reservado EXCLUSIVAMENTE para
+   los CTA principales, de forma que el botón de acción nunca
+   compita visualmente con el resto de los elementos interactivos.
    ============================================ */
 :root {
-  --bg: #0f0e0d;
-  --surface: #17140f;
-  --surface-2: #1e1a15;
-  --line: #332c22;
-  --text: #f2ede4;
-  --text-dim: #a89e8f;
-  --amber: #d6d6d1;
-  --amber-dim: #4a4a47;
-  --teal: #4fc9c0;
+  /* Fondos */
+  --bg: #0f0e0d;              /* Background principal */
+  --surface: #17140f;         /* Background secundario (secciones alternadas) */
+  --surface-2: #1e1a15;       /* Surface / card color */
+  --line: #332c22;            /* Border */
+
+  /* Texto */
+  --text: #f2ede4;            /* Primary text */
+  --text-dim: #a89e8f;        /* Secondary / muted text */
+
+  /* Acentos */
+  --amber: #d6d6d1;           /* CTA / Primary accent (reservado para botones de acción) */
+  --amber-dim: #4a4a47;       /* Acento CTA atenuado (bordes, badges) */
+  --teal: #4fc9c0;            /* Secondary accent: links, hover, focus, elementos interactivos */
+
+  /* Estados de formulario (definidos para futuras validaciones) */
+  --success: #4fc98a;
+  --warning: #d6b24f;
+  --error: #d65f4f;
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -125,8 +142,8 @@ a { color: inherit; }
   border-bottom: 1px solid transparent;
 }
 .site-nav a:hover, .site-nav a:focus-visible {
-  color: var(--amber);
-  border-bottom-color: var(--amber);
+  color: var(--teal);
+  border-bottom-color: var(--teal);
 }
 .nav-locked { opacity: 0.6; }
 
@@ -756,7 +773,7 @@ a { color: inherit; }
   font-size: 0.95rem;
 }
 .form-row input:focus, .form-row textarea:focus {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--teal);
   outline-offset: 1px;
 }
 .contact-form .btn { align-self: flex-start; }
@@ -811,7 +828,7 @@ a { color: inherit; }
 
 /* focus visibility */
 a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--teal);
   outline-offset: 2px;
 }
 
