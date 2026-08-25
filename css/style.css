@@ -92,36 +92,12 @@ a { color: inherit; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.03em;
   text-decoration: none;
-  color: var(--text);
 }
-
-.logo-bars {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 2px;
-  height: 16px;
-}
-.logo-bars i {
+.logo-mark {
+  height: 32px;
+  width: auto;
   display: block;
-  width: 3px;
-  background: var(--amber);
-  border-radius: 1px;
-}
-.logo-bars i:nth-child(1) { height: 40%; animation-delay: 0s; }
-.logo-bars i:nth-child(2) { height: 90%; animation-delay: 0.15s; }
-.logo-bars i:nth-child(3) { height: 60%; animation-delay: 0.3s; }
-.logo-bars i:nth-child(4) { height: 100%; animation-delay: 0.45s; }
-.logo-bars i:nth-child(5) { height: 50%; animation-delay: 0.6s; }
-
-@keyframes bar-bounce {
-  0%, 100% { transform: scaleY(0.4); }
-  50% { transform: scaleY(1); }
 }
 
 .site-nav {
@@ -182,9 +158,13 @@ a { color: inherit; }
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 7vw, 5rem);
   line-height: 0.95;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
+}
+.hero-logo {
+  height: clamp(70px, 12vw, 130px);
+  width: auto;
+  display: block;
 }
 
 .hero-sub {
@@ -527,6 +507,71 @@ a { color: inherit; }
 }
 
 /* ============================================
+   SUBNAVEGACIÓN (página Feedback)
+   ============================================ */
+.subpage-nav {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1.6rem 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.subpage-legal {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+.subpage-legal a {
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--line);
+}
+.subpage-legal a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+
+/* ============================================
+   TESTIMONIOS
+   ============================================ */
+.testimonials-disclaimer { margin-top: -1rem; margin-bottom: 2.5rem; }
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.testimonial-card {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.stars {
+  color: var(--amber);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+}
+.testimonial-text {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+.testimonial-author {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  opacity: 0.75;
+}
+
+/* ============================================
    SAMPLE PACKS
    ============================================ */
 .filters {
@@ -780,21 +825,30 @@ a { color: inherit; }
 
 .socials {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-top: 0;
-  margin-left: calc(150px + 2.2rem);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  text-transform: uppercase;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
 }
-.socials a { text-decoration: none; color: var(--text-dim); border-bottom: 1px solid transparent; }
-.socials a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  transition: color 0.2s, border-color 0.2s;
+}
+.social-icon svg { width: 18px; height: 18px; }
+.social-icon:hover, .social-icon:focus-visible {
+  color: var(--teal);
+  border-color: var(--teal);
+}
 
 /* ============================================
-   FOOTER
+   SECCIÓN NOSOTROS + CONTACTO (contenido, no footer)
    ============================================ */
-.site-footer-main {
+.content-footer-section {
   background: var(--surface);
   border-top: 1px solid var(--line);
   padding: 4.5rem 1.5rem 0;
@@ -815,6 +869,54 @@ a { color: inherit; }
 }
 .footer-col .section-intro { margin-bottom: 2rem; }
 .footer-col .about-content { align-items: flex-start; }
+
+/* ============================================
+   FOOTER (marca, navegación, comunidad)
+   ============================================ */
+.site-footer-main {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: 3.5rem 1.5rem 0;
+}
+
+.footer-grid-4 {
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+  align-items: start;
+}
+
+.footer-grid-4 .footer-col h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+}
+.footer-tagline {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.92rem;
+  margin-bottom: 0.4rem;
+}
+.footer-desc {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 32ch;
+}
+
+.footer-col-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.3rem;
+}
+.footer-col-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col-nav a:hover, .footer-col-nav a:focus-visible { color: var(--teal); }
+.footer-col-nav a.nav-locked { opacity: 0.6; }
 
 .footer-bottom {
   border-top: 1px solid var(--line);
@@ -861,8 +963,12 @@ a:focus-visible, button:focus-visible {
   .pdf-modal-content { max-width: 94vw; padding: 1rem; }
   .pdf-viewer img { max-height: 60vh; }
   .footer-col .about-content { flex-direction: column; align-items: center; text-align: center; }
-  .footer-col .socials { margin-left: 0; }
   .footer-col .about-content .section-intro { margin-left: auto; margin-right: auto; }
   .about-content { flex-direction: column; align-items: center; text-align: center; }
   .about-content .section-intro { margin-left: auto; margin-right: auto; }
+  .footer-grid-4 { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; }
+  .footer-desc { max-width: none; margin-left: auto; margin-right: auto; }
+  .socials { justify-content: center; }
+  .footer-col-nav nav { align-items: center; }
+  .subpage-nav { flex-direction: column; align-items: flex-start; }
 }

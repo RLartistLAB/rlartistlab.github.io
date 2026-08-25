@@ -1,22 +1,25 @@
 // Año dinámico en el footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Menú móvil
 const navToggle = document.getElementById('navToggle');
 const siteNav = document.getElementById('siteNav');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = siteNav.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-});
-
-// Cerrar el menú al elegir una sección (mobile)
-siteNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    siteNav.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
+if (navToggle && siteNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
   });
-});
+
+  // Cerrar el menú al elegir una sección (mobile)
+  siteNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // Filtro de Sample Packs
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -39,11 +42,13 @@ filterButtons.forEach(btn => {
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formNote.textContent = '¡Gracias! Este formulario aún no está conectado a un servicio de envío — se activará en una próxima etapa.';
-  formNote.style.color = 'var(--teal)';
-});
+if (contactForm && formNote) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formNote.textContent = '¡Gracias! Este formulario aún no está conectado a un servicio de envío — se activará en una próxima etapa.';
+    formNote.style.color = 'var(--teal)';
+  });
+}
 
 // Resaltar el botón del hero correspondiente al pasar el mouse por el texto
 const heroHighlights = document.querySelectorAll('.hero-detail .hl');
@@ -69,6 +74,7 @@ heroCtaButtons.forEach(btn => {
 // Preview de audio (SoundCloud): botón de play manual sobre la portada del sample pack
 document.querySelectorAll('.pack-art-real[data-track]').forEach(art => {
   const playBtn = art.querySelector('.preview-play');
+  if (!playBtn) return;
   let iframe = null;
 
   playBtn.addEventListener('click', (e) => {
@@ -125,31 +131,38 @@ function closePdfModal() {
   document.body.style.overflow = '';
 }
 
-if (btnVerPrograma) {
+if (pdfModal && btnVerPrograma) {
   btnVerPrograma.addEventListener('click', openPdfModal);
+
+  pdfModal.querySelectorAll('[data-pdf-close]').forEach(el => {
+    el.addEventListener('click', closePdfModal);
+  });
+
+  const pdfPrevBtn = document.getElementById('pdfPrev');
+  const pdfNextBtn = document.getElementById('pdfNext');
+
+  if (pdfPrevBtn) {
+    pdfPrevBtn.addEventListener('click', () => {
+      if (currentPdfPage > 1) {
+        currentPdfPage--;
+        renderPdfPage();
+      }
+    });
+  }
+
+  if (pdfNextBtn) {
+    pdfNextBtn.addEventListener('click', () => {
+      if (currentPdfPage < totalPdfPages) {
+        currentPdfPage++;
+        renderPdfPage();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!pdfModal.classList.contains('open')) return;
+    if (e.key === 'Escape') closePdfModal();
+    if (e.key === 'ArrowLeft' && currentPdfPage > 1) { currentPdfPage--; renderPdfPage(); }
+    if (e.key === 'ArrowRight' && currentPdfPage < totalPdfPages) { currentPdfPage++; renderPdfPage(); }
+  });
 }
-
-pdfModal.querySelectorAll('[data-pdf-close]').forEach(el => {
-  el.addEventListener('click', closePdfModal);
-});
-
-document.getElementById('pdfPrev').addEventListener('click', () => {
-  if (currentPdfPage > 1) {
-    currentPdfPage--;
-    renderPdfPage();
-  }
-});
-
-document.getElementById('pdfNext').addEventListener('click', () => {
-  if (currentPdfPage < totalPdfPages) {
-    currentPdfPage++;
-    renderPdfPage();
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (!pdfModal.classList.contains('open')) return;
-  if (e.key === 'Escape') closePdfModal();
-  if (e.key === 'ArrowLeft' && currentPdfPage > 1) { currentPdfPage--; renderPdfPage(); }
-  if (e.key === 'ArrowRight' && currentPdfPage < totalPdfPages) { currentPdfPage++; renderPdfPage(); }
-});
