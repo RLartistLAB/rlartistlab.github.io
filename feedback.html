@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Feedback de Alumnos | RL Artist Lab</title>
-<meta name="description" content="Testimonios de alumnos de RL Artist Lab sobre su experiencia aprendiendo producción musical, FL Studio y desarrollo artístico.">
+<title>Feedback, Nosotros y Contacto | RL Artist Lab</title>
+<meta name="description" content="Testimonios de alumnos de RL Artist Lab, quiénes somos y cómo contactar a Angel Marcelo para consultas sobre cursos, servicios o colaboraciones.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://angelmarcelok.github.io/feedback.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RL Artist Lab">
-<meta property="og:title" content="Feedback de Alumnos | RL Artist Lab">
-<meta property="og:description" content="Testimonios de alumnos de RL Artist Lab sobre su experiencia aprendiendo producción musical.">
+<meta property="og:title" content="Feedback, Nosotros y Contacto | RL Artist Lab">
+<meta property="og:description" content="Testimonios de alumnos, quiénes somos y cómo contactar a RL Artist Lab.">
 <meta property="og:url" content="https://angelmarcelok.github.io/feedback.html">
 <meta property="og:image" content="https://angelmarcelok.github.io/img/favicon-512.png">
 <meta property="og:locale" content="es_AR">
@@ -47,6 +47,7 @@
   <nav class="site-nav" id="siteNav">
     <a href="index.html#cursos">Cursos</a>
     <a href="index.html#samples">Samplepacks</a>
+    <a href="index.html#guias">Guías</a>
     <a href="index.html#servicios">Servicios</a>
     <a href="index.html#tutoriales">Tutoriales</a>
     <a href="#" class="nav-locked" title="Próximamente">Mi Usuario 🔒</a>
@@ -58,15 +59,12 @@
   <!-- Barra de navegación específica de esta página -->
   <div class="subpage-nav">
     <a href="index.html" class="btn btn-outline btn-small">← Volver al inicio</a>
-    <div class="subpage-legal">
-      <a href="#" title="Próximamente">Términos y Condiciones</a>
-      <a href="#" title="Próximamente">Política de Privacidad</a>
-    </div>
   </div>
 
-  <section class="section">
+  <!-- FEEDBACK DE ALUMNOS -->
+  <section class="section" id="feedback">
     <h2>Feedback de alumnos</h2>
-    <p class="section-intro">Testimonios reales de personas que pasaron por RL Artist Lab, contando su experiencia aprendiendo producción musical.</p>
+    <p class="section-intro">Testimonios de personas que pasaron por RL Artist Lab, contando su experiencia aprendiendo producción musical.</p>
     <p class="note testimonials-disclaimer">* Los testimonios que aparecen a continuación son contenido de ejemplo (placeholder), hasta que sean reemplazados por testimonios reales de alumnos.</p>
 
     <div class="testimonial-grid">
@@ -102,15 +100,60 @@
     </div>
   </section>
 
+  <!-- NOSOTROS -->
+  <section class="section section-alt" id="nosotros">
+    <h2>Nosotros: RL Artist Lab by Angel Marcelo:</h2>
+    <div class="about-content">
+      <div class="bio-photo">
+        <img src="img/angel-marcelo.png" alt="Angel Marcelo, DJ y productor de música electrónica" loading="lazy">
+      </div>
+      <p class="section-intro bio">
+        DJ y productor de Buenos Aires. Su sonido fusiona groove, bajos potentes y voces old-school entre los géneros House, Deep House y Tech House. Ha tocado en festivales de renombre como el Ultra Music Festival, además de los clubes más importantes del país, compartiendo cartel con referentes de la escena nacional e internacional. Sus tracks han sido editados en sellos de Argentina, España, Brasil y EE. UU. Algunos de sus trabajos fueron apoyados por nombres como Marco Carola, Joseph Capriati, Mau P, CID y DJs From Mars, entre otros, alcanzando el Top 100 de Beatport en Tech House en varias ocasiones. Hoy también forma a la próxima generación de productores como docente de FL Studio en ARJAUS.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p class="section-intro">¿Consultas sobre cursos, servicios o colaboraciones? Escribime.</p>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      <p class="note" id="formNote">* Este formulario todavía no envía datos. *</p>
+    </form>
+  </section>
+
 </main>
 
 <footer class="site-footer-main">
-  <div class="footer-grid footer-grid-4">
-    <div class="footer-col">
-      <h3>RL Artist Lab</h3>
-      <p class="footer-tagline">Formación y desarrollo para artistas.</p>
-      <p class="footer-desc">Todo lo que necesitás para aprender, producir y desarrollar tu identidad musical, en un solo lugar.</p>
+  <div class="footer-grid footer-grid-3">
+    <div class="footer-col footer-col-nav">
+      <h3>Navegación</h3>
+      <nav aria-label="Navegación del footer">
+        <a href="index.html#cursos">Cursos</a>
+        <a href="index.html#samples">Samplepacks</a>
+        <a href="index.html#guias">Guías</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#tutoriales">Tutoriales</a>
+        <a href="#" class="nav-locked" title="Próximamente">Mi Usuario</a>
+      </nav>
+    </div>
 
+    <div class="footer-col footer-col-nav">
+      <h3>RL Artist Lab</h3>
       <div class="socials">
         <a href="#" class="social-icon" data-social="instagram" aria-label="Instagram (próximamente)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.2" cy="6.8" r="1"/></svg>
@@ -122,28 +165,18 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><line x1="7" y1="10" x2="7" y2="17"/><circle cx="7" cy="6.7" r="0.9" fill="currentColor" stroke="none"/><path d="M11.5 17v-4.5c0-1.5 1-2.5 2.5-2.5s2.3 1 2.3 2.5V17"/><line x1="11.5" y1="10" x2="11.5" y2="17"/></svg>
         </a>
       </div>
-    </div>
-
-    <div class="footer-col footer-col-nav">
-      <nav aria-label="Navegación del footer">
-        <a href="index.html#cursos">Cursos</a>
-        <a href="index.html#samples">Samplepacks</a>
-        <a href="index.html#servicios">Servicios</a>
-        <a href="index.html#tutoriales">Tutoriales</a>
-        <a href="#" class="nav-locked" title="Próximamente">Mi Usuario</a>
-      </nav>
-    </div>
-
-    <div class="footer-col footer-col-nav">
       <nav aria-label="Sobre RL Artist Lab">
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="feedback.html#feedback">Feedback de alumnos</a>
+        <a href="feedback.html#nosotros">Nosotros</a>
+        <a href="feedback.html#contacto">Contacto</a>
       </nav>
     </div>
 
     <div class="footer-col footer-col-nav">
-      <nav aria-label="Comunidad">
-        <a href="feedback.html">Feedback de alumnos</a>
+      <h3>Legal</h3>
+      <nav aria-label="Legal">
+        <a href="#" title="Próximamente">Términos y Condiciones</a>
+        <a href="#" title="Próximamente">Política de Privacidad</a>
       </nav>
     </div>
   </div>
