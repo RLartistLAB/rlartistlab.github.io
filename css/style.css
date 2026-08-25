@@ -1,30 +1,34 @@
 /* ============================================
    RL ARTIST LAB — SISTEMA DE COLOR
    ============================================
-   Base oscura neutra (bajo cansancio visual, alto contraste,
-   estética de estudio/laboratorio) + un único acento cian/teal
-   para TODO elemento interactivo secundario (links, hover, tags,
-   filtros) y un blanco casi puro reservado EXCLUSIVAMENTE para
-   los CTA principales, de forma que el botón de acción nunca
-   compita visualmente con el resto de los elementos interactivos.
+   Negro azulado = profundidad | Violeta = creatividad/identidad
+   Cyan = energía/impacto (uso mínimo, ~2-5%) | Blanco = claridad.
+   Jerarquía: fondos oscuros ~65% / superficies y grises ~20% /
+   blanco ~10% / acentos ~5%. El violeta es el acento dominante;
+   el cian se reserva para detalles puntuales, nunca masivo.
    ============================================ */
 :root {
   /* Fondos */
-  --bg: #0f0e0d;              /* Background principal */
-  --surface: #17140f;         /* Background secundario (secciones alternadas) */
-  --surface-2: #1e1a15;       /* Surface / card color */
-  --line: #332c22;            /* Border */
+  --bg: #080a0f;              /* Background principal: hero, navbar, footer, grandes superficies */
+  --surface: #101722;         /* Background secundario: secciones alternadas */
+  --surface-2: #101722;       /* Surface / card color: cards, contenedores, formularios */
+  --line: rgba(255, 255, 255, 0.06); /* Border sutil */
 
   /* Texto */
-  --text: #f2ede4;            /* Primary text */
-  --text-dim: #a89e8f;        /* Secondary / muted text */
+  --text: #f5f7fa;            /* Primary text: H1/H2/H3, títulos */
+  --text-dim: #9aa4b2;        /* Secondary / muted text: descripciones, metadata */
 
   /* Acentos */
-  --amber: #d6d6d1;           /* CTA / Primary accent (reservado para botones de acción) */
-  --amber-dim: #4a4a47;       /* Acento CTA atenuado (bordes, badges) */
-  --teal: #4fc9c0;            /* Secondary accent: links, hover, focus, elementos interactivos */
+  --violet: #7c3aed;          /* Acento principal de marca/acción: CTA, links, estados activos */
+  --violet-light: #a78bfa;    /* Hover / microinteracciones */
+  --cyan: #22d3ee;            /* Acento secundario: solo detalles puntuales, uso mínimo */
 
-  /* Estados de formulario (definidos para futuras validaciones) */
+  /* Alias de compatibilidad interna (mismos roles, nueva paleta) */
+  --amber: var(--violet);
+  --amber-dim: rgba(124, 58, 237, 0.35);
+  --teal: var(--violet);
+
+  /* Estados de formulario */
   --success: #4fc98a;
   --warning: #d6b24f;
   --error: #d65f4f;
@@ -69,8 +73,8 @@ a { color: inherit; }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,255,255,0.05), transparent),
-    radial-gradient(ellipse 60% 40% at 90% 30%, rgba(79,201,192,0.05), transparent);
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.10), transparent),
+    radial-gradient(ellipse 55% 35% at 92% 28%, rgba(34,211,238,0.06), transparent);
 }
 
 /* ============================================
@@ -221,9 +225,9 @@ a { color: inherit; }
 
 .btn-primary {
   background: var(--amber);
-  color: #141414;
+  color: #f5f7fa;
 }
-.btn-primary:hover { background: #eaeae6; }
+.btn-primary:hover { background: var(--violet-light); }
 
 .btn-outline {
   background: transparent;
@@ -233,7 +237,7 @@ a { color: inherit; }
 .btn-outline:hover {
   background: var(--amber);
   border-color: var(--amber);
-  color: #141414;
+  color: #f5f7fa;
 }
 
 .btn-small {
@@ -310,7 +314,7 @@ a { color: inherit; }
 .hero-cta .btn-outline.btn-active {
   background: var(--amber);
   border-color: var(--amber);
-  color: #141414;
+  color: #f5f7fa;
 }
 
 /* ============================================
@@ -416,7 +420,7 @@ a { color: inherit; }
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--teal);
+  color: var(--cyan);
   margin-bottom: 0.7rem;
 }
 .course-faq-col details {
@@ -450,7 +454,7 @@ a { color: inherit; }
 }
 .price-off {
   font-weight: 400;
-  color: var(--amber);
+  color: var(--cyan);
   font-size: 0.88rem;
 }
 .course-cta {
@@ -615,7 +619,7 @@ a { color: inherit; }
   transition: all 0.2s;
 }
 .filter-btn:hover { border-color: var(--teal); color: var(--teal); }
-.filter-btn.active { background: var(--amber); border-color: var(--amber); color: #141414; }
+.filter-btn.active { background: var(--amber); border-color: var(--amber); color: #f5f7fa; }
 
 .pack-grid {
   display: grid;
@@ -671,8 +675,8 @@ a { color: inherit; }
   transition: opacity 0.2s, background 0.2s, transform 0.15s;
 }
 .pack-art-real:hover .preview-play { opacity: 1; }
-.preview-play:hover { background: var(--amber); color: #141414; transform: scale(1.06); }
-.preview-play.is-playing { opacity: 1; background: var(--amber); color: #141414; }
+.preview-play:hover { background: var(--amber); color: #f5f7fa; transform: scale(1.06); }
+.preview-play.is-playing { opacity: 1; background: var(--cyan); color: #080a0f; }
 
 /* En dispositivos táctiles (sin hover) el botón queda siempre visible */
 @media (hover: none) {
