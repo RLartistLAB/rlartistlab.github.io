@@ -92,12 +92,20 @@ a { color: inherit; }
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.55rem;
   text-decoration: none;
 }
 .logo-mark {
-  height: 32px;
+  height: 26px;
   width: auto;
   display: block;
+}
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 .site-nav {
@@ -158,13 +166,26 @@ a { color: inherit; }
 }
 
 .hero h1 {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
   line-height: 0.95;
   margin-bottom: 1.4rem;
 }
-.hero-logo {
-  height: clamp(70px, 12vw, 130px);
+.hero-logo-mark {
+  height: clamp(48px, 8vw, 84px);
   width: auto;
+  flex-shrink: 0;
   display: block;
+}
+.hero-logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  letter-spacing: -0.01em;
+  color: var(--text);
+  line-height: 1;
 }
 
 .hero-sub {
