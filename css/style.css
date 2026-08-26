@@ -332,9 +332,11 @@ a { color: inherit; }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.section-alt > * { max-width: var(--max-w); margin-left: auto; margin-right: auto; }
-.section-alt > h2,
-.section-alt > .section-intro { margin-left: 0; }
+.section-alt > * {
+  max-width: var(--max-w);
+  margin-left: max(calc((100% - var(--max-w)) / 2), 0px);
+  margin-right: auto;
+}
 
 .section h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 
