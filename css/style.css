@@ -9,9 +9,9 @@
    ============================================ */
 :root {
   /* Fondos */
-  --bg: #080a0f;              /* Background principal: hero, navbar, footer, grandes superficies */
-  --surface: #101722;         /* Background secundario: secciones alternadas */
-  --surface-2: #101722;       /* Surface / card color: cards, contenedores, formularios */
+  --bg: #0b0810;               /* Background principal: hero, navbar, footer, grandes superficies */
+  --surface: #171320;          /* Background secundario: secciones alternadas */
+  --surface-2: #171320;        /* Surface / card color: cards, contenedores, formularios */
   --line: rgba(255, 255, 255, 0.06); /* Border sutil */
 
   /* Texto */
@@ -423,7 +423,7 @@ a { color: inherit; }
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--cyan);
+  color: var(--violet-light);
   margin-bottom: 0.7rem;
 }
 .course-faq-col details {
@@ -457,7 +457,7 @@ a { color: inherit; }
 }
 .price-off {
   font-weight: 400;
-  color: var(--cyan);
+  color: var(--violet-light);
   font-size: 0.88rem;
 }
 .course-cta {
@@ -679,7 +679,7 @@ a { color: inherit; }
 }
 .pack-art-real:hover .preview-play { opacity: 1; }
 .preview-play:hover { background: var(--amber); color: #f5f7fa; transform: scale(1.06); }
-.preview-play.is-playing { opacity: 1; background: var(--cyan); color: #080a0f; }
+.preview-play.is-playing { opacity: 1; background: var(--violet-light); color: var(--bg); }
 
 /* En dispositivos táctiles (sin hover) el botón queda siempre visible */
 @media (hover: none) {
