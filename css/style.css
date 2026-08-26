@@ -682,6 +682,9 @@ a { color: inherit; }
 @media (hover: none) {
   .preview-play { opacity: 1; }
 }
+.pack-card-link { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+.pack-card-link:hover { border-color: var(--amber-dim); transform: translateY(-3px); }
+
 .pack-footer-single { justify-content: flex-end; }
 
 .pack-card-empty {

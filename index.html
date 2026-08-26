@@ -78,7 +78,7 @@
       "description": "Acompañamiento personalizado en producción musical, organizado en tres niveles (Inicial, Intermedio, Avanzado): bases de producción en FL Studio, optimización de flujo de trabajo e identidad sonora, y profesionalización en la industria musical.",
       "provider": { "@id": "https://angelmarcelok.github.io/#organization" },
       "courseMode": "online",
-      "url": "https://angelmarcelok.github.io/#cursos",
+      "url": "https://angelmarcelok.github.io/curso-creator-360.html",
       "offers": {
         "@type": "Offer",
         "price": "235000",
@@ -174,58 +174,40 @@
 
   <!-- CURSOS -->
   <section id="cursos" class="section">
-    <h2>Cursos de Producción Musical</h2>
+    <h2>Cursos</h2>
 
-    <div class="course-card">
-      <span class="badge">Creator 360 Coaching</span>
-      <h3>Desarrollá tu identidad musical</h3>
-      <p class="section-intro course-lead">Un recorrido en 3 niveles para pasar de tus primeras ideas a un proyecto listo para lanzar. Acompañamiento 100% personalizado, adaptado a tu nivel, tus objetivos y tu forma de aprender.</p>
+    <div class="pack-grid" id="cursosGrid">
+      <a href="curso-creator-360.html" class="pack-card pack-card-link">
+        <div class="pack-art pack-art-real">
+          <img src="img/curso-creator-360.jpg" alt="Creator 360 Coaching" loading="lazy">
+        </div>
+        <p class="pack-genre">Curso 01</p>
+        <h3>Creator 360 Coaching</h3>
+        <p class="pack-meta">Acompañamiento 100% personalizado, adaptado a tu nivel, tus objetivos y tu forma de aprender.</p>
+      </a>
 
-      <div class="level-grid">
-        <div class="level-card">
-          <p class="level-num">01</p>
-          <h4>Inicial</h4>
-          <p>Bases de producción en FL Studio: teoría musical, mezcla y mastering de punta a punta, hasta terminar tu primera canción completa.</p>
+      <article class="pack-card">
+        <div class="pack-art pack-art-real">
+          <img src="img/curso-introduccion.jpg" alt="Introducción a la producción musical" loading="lazy">
         </div>
-        <div class="level-card">
-          <p class="level-num">02</p>
-          <h4>Intermedio</h4>
-          <p>Auditoría de tu nivel actual y acompañamiento personalizado para pulir tu flujo de trabajo, tu criterio de mezcla y tu identidad sonora.</p>
-        </div>
-        <div class="level-card">
-          <p class="level-num">03</p>
-          <h4>Avanzado</h4>
-          <p>Profesionalización: industria musical, derechos de autor, marca personal y un proyecto final con estándares comerciales.</p>
-        </div>
-      </div>
+        <p class="pack-genre">Curso 02</p>
+        <h3>Introducción a la producción musical</h3>
+        <p class="pack-meta">Desarrollá una base sólida en producción musical y adquirí las herramientas necesarias para comenzar tu camino como productor.</p>
+      </article>
 
-      <div class="course-info-grid">
-        <div class="course-faq-col">
-          <h4>Preguntas frecuentes</h4>
-          <details>
-            <summary>¿Necesito experiencia previa?</summary>
-            <p>No. Elegimos el nivel según tu punto de partida.</p>
-          </details>
-          <details>
-            <summary>¿Cómo son las clases?</summary>
-            <p>18 clases individuales de 1,5 h por Zoom, con seguimiento personalizado.</p>
-          </details>
-          <details>
-            <summary>¿Puedo hacer un solo nivel?</summary>
-            <p>Sí. Cada nivel es independiente o puede formar parte del recorrido anual.</p>
-          </details>
+      <article class="pack-card">
+        <div class="pack-art pack-art-real">
+          <img src="img/curso-voces.jpg" alt="Cómo grabar y mezclar voces" loading="lazy">
         </div>
+        <p class="pack-genre">Curso 03</p>
+        <h3>Cómo grabar y mezclar voces</h3>
+        <p class="pack-meta">Conocé las técnicas esenciales de grabación, edición y mezcla para lograr voces claras, potentes y profesionales.</p>
+      </article>
 
-        <div class="course-summary-col">
-          <p class="course-meta">18 clases de 1,5 h · 4 meses · 100% online · seguimiento personalizado</p>
-          <p class="course-price">Desde AR$ 235.000/mes <span class="price-off">· 15% OFF para ex alumnos</span></p>
-
-          <div class="course-cta">
-            <button type="button" class="btn btn-primary btn-disabled" disabled>Comprar - Próximamente</button>
-            <button type="button" class="btn btn-outline" id="btnVerPrograma">Ver programa completo</button>
-          </div>
-        </div>
-      </div>
+      <article class="pack-card pack-card-empty">
+        <div class="pack-art"></div>
+        <p class="pack-coming">Próximamente</p>
+      </article>
     </div>
   </section>
 
@@ -429,21 +411,6 @@
     <p>© <span id="year"></span> RL Artist Lab. Todos los derechos reservados.</p>
   </div>
 </footer>
-
-<div class="pdf-modal" id="pdfModal" aria-hidden="true">
-  <div class="pdf-modal-backdrop" data-pdf-close></div>
-  <div class="pdf-modal-content" role="dialog" aria-modal="true" aria-label="Programa completo — Creator 360 Coaching">
-    <button type="button" class="pdf-modal-close" data-pdf-close aria-label="Cerrar visor">✕</button>
-    <div class="pdf-viewer">
-      <img src="img/programa/pagina-1.jpg" alt="Página del programa Creator 360 Coaching" id="pdfPageImg" draggable="false" oncontextmenu="return false">
-    </div>
-    <div class="pdf-modal-nav">
-      <button type="button" class="btn btn-small" id="pdfPrev">← Anterior</button>
-      <span class="pdf-page-indicator" id="pdfPageIndicator">1 / 8</span>
-      <button type="button" class="btn btn-small" id="pdfNext">Siguiente →</button>
-    </div>
-  </div>
-</div>
 
 <script src="js/script.js"></script>
 </body>
