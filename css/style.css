@@ -607,7 +607,7 @@ a { color: inherit; }
 
 .pack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1.5rem;
 }
 .pack-card {
@@ -940,6 +940,13 @@ a:focus-visible, button:focus-visible {
 /* ============================================
    RESPONSIVE
    ============================================ */
+@media (max-width: 1000px) {
+  .level-grid { grid-template-columns: 1fr 1fr; }
+  .tutorial-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid-4 { grid-template-columns: 1fr 1fr; gap: 2.2rem 2.5rem; }
+  .footer-col-brand { grid-column: 1 / -1; }
+}
+
 @media (max-width: 780px) {
   .nav-toggle { display: flex; }
   .site-nav {
@@ -968,9 +975,21 @@ a:focus-visible, button:focus-visible {
   .footer-col .about-content .section-intro { margin-left: auto; margin-right: auto; }
   .about-content { flex-direction: column; align-items: center; text-align: center; }
   .about-content .section-intro { margin-left: auto; margin-right: auto; }
-  .footer-grid-4 { grid-template-columns: 1fr; gap: 2.2rem; text-align: center; }
+  .footer-grid-4 { grid-template-columns: 1fr; gap: 2.4rem; text-align: center; }
   .footer-desc { max-width: none; margin-left: auto; margin-right: auto; }
   .socials { justify-content: center; }
   .footer-col-nav nav { align-items: center; }
   .subpage-nav { flex-direction: column; align-items: flex-start; }
+  .hero { padding: 3.5rem 1.25rem 2.5rem; }
+  .section { padding: 3.5rem 1.25rem; }
+  .site-header { padding: 1rem 1.25rem; }
+  .course-card { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .level-grid { grid-template-columns: 1fr; }
+  .tutorial-grid { grid-template-columns: 1fr; }
+  .course-info-grid { gap: 1.6rem; }
+  .hero-cta { gap: 0.7rem; }
+  .filters { gap: 0.5rem; }
 }
