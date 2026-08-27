@@ -601,6 +601,7 @@ a { color: inherit; }
 }
 .filter-btn:hover { border-color: var(--teal); color: var(--teal); }
 .filter-btn.active { background: var(--amber); border-color: var(--amber); color: #f5f7fa; }
+.filter-btn-disabled { opacity: 0.4; pointer-events: none; }
 
 .pack-grid {
   display: grid;
@@ -609,6 +610,7 @@ a { color: inherit; }
 }
 .pack-card {
   background: var(--bg);
+  scroll-margin-top: 100px;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 1.2rem;
