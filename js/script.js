@@ -38,6 +38,17 @@ filterButtons.forEach(btn => {
   });
 });
 
+// Botones de navegación (Cursos y Guías): marcar como activo el seleccionado
+document.querySelectorAll('#cursos .filters, #guias .filters').forEach(group => {
+  const links = group.querySelectorAll('.filter-btn:not(.filter-btn-disabled)');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+});
+
 // Formulario de contacto (todavía sin backend)
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
