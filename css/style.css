@@ -562,9 +562,9 @@ a { color: inherit; }
 }
 .testimonial-heading {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin: 0;
 }
 .testimonial-name {
