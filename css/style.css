@@ -541,8 +541,6 @@ a { color: inherit; }
 /* ============================================
    TESTIMONIOS
    ============================================ */
-.testimonials-disclaimer { margin-top: -1rem; margin-bottom: 2.5rem; }
-
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -575,6 +573,13 @@ a { color: inherit; }
   letter-spacing: 0.04em;
   color: var(--text-dim);
   opacity: 0.75;
+}
+.testimonial-card-empty {
+  background: transparent;
+  border-style: dashed;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
 }
 
 /* ============================================
