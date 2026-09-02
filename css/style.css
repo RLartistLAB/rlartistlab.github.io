@@ -560,6 +560,19 @@ a { color: inherit; }
   font-size: 1.1rem;
   letter-spacing: 0.15em;
 }
+.testimonial-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+}
+.testimonial-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+}
 .testimonial-text {
   color: var(--text-dim);
   font-size: 0.92rem;
