@@ -397,6 +397,49 @@ a { color: inherit; }
 }
 
 /* ============================================
+   FILOSOFÍA
+   ============================================ */
+.philosophy-intro {
+  max-width: 65ch;
+  margin-bottom: 3rem;
+}
+.philosophy-lead {
+  color: var(--text);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0.9rem 0 1.4rem;
+}
+.philosophy-intro .section-intro { margin-bottom: 0; }
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.philosophy-card {
+  border-top: 2px solid var(--violet);
+  padding-top: 1.2rem;
+}
+.philosophy-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+.philosophy-card p {
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+.philosophy-tags {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--violet-light);
+  margin: 0 !important;
+}
+
+/* ============================================
    CURSOS
    ============================================ */
 .course-card {
