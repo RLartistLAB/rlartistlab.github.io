@@ -188,7 +188,54 @@ a { color: inherit; }
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 500;
   line-height: 1.55;
-  margin-bottom: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-info {
+  max-width: 58ch;
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin: 0 0 2.6rem;
+}
+
+.hero-nav-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.hero-nav-main { margin-bottom: 0.8rem; }
+
+.hero-nav-sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.hero-nav-sub a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-nav-sub .dot {
+  color: var(--text-dim);
+  opacity: 0.4;
+}
+.hero-nav-group:hover .hero-nav-sub a,
+.hero-nav-group:focus-within .hero-nav-sub a,
+.hero-nav-main:hover ~ .hero-nav-sub a,
+.hero-nav-main:focus ~ .hero-nav-sub a {
+  color: var(--violet-light);
+}
+.hero-nav-sub a:hover,
+.hero-nav-sub a:focus-visible {
+  color: var(--text);
 }
 
 .hero-cta {

@@ -61,27 +61,6 @@ if (contactForm && formNote) {
   });
 }
 
-// Resaltar el botón del hero correspondiente al pasar el mouse por el texto
-const heroHighlights = document.querySelectorAll('.hero-detail .hl');
-
-heroHighlights.forEach(span => {
-  const targetBtn = document.getElementById(span.dataset.target);
-  if (!targetBtn) return;
-
-  span.addEventListener('mouseenter', () => targetBtn.classList.add('btn-highlight'));
-  span.addEventListener('mouseleave', () => targetBtn.classList.remove('btn-highlight'));
-});
-
-// Marcar como "seleccionado" (blanco) el botón del hero en el que se hace clic
-const heroCtaButtons = document.querySelectorAll('.hero-cta .btn');
-
-heroCtaButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    heroCtaButtons.forEach(b => b.classList.remove('btn-active'));
-    btn.classList.add('btn-active');
-  });
-});
-
 // Preview de audio (SoundCloud): botón de play manual sobre la portada del sample pack
 document.querySelectorAll('.pack-art-real[data-track]').forEach(art => {
   const playBtn = art.querySelector('.preview-play');
