@@ -156,12 +156,16 @@ a { color: inherit; }
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 5.5rem 1.5rem 4rem;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero h1 {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.1rem;
   flex-wrap: wrap;
   line-height: 0.95;
@@ -184,19 +188,19 @@ a { color: inherit; }
 
 .hero-sub {
   max-width: 50ch;
+  margin: 0 auto 1rem;
   color: var(--text);
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 500;
   line-height: 1.55;
-  margin-bottom: 1rem;
 }
 
 .hero-info {
   max-width: 58ch;
+  margin: 0 auto 2.6rem;
   color: var(--text-dim);
   font-size: 0.98rem;
   line-height: 1.75;
-  margin: 0 0 2.6rem;
 }
 
 .hero-cta-compact { margin-bottom: 1rem; }
@@ -211,31 +215,28 @@ a { color: inherit; }
    ============================================ */
 .marquee {
   overflow: hidden;
-  background: var(--surface);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 1.1rem 0;
+  background: var(--violet);
+  padding: 0.65rem 0;
 }
 .marquee-track {
   display: flex;
   align-items: center;
   width: max-content;
-  gap: 2.2rem;
+  gap: 1.4rem;
   animation: marquee-scroll 24s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-item {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.05rem, 2.6vw, 1.7rem);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--text);
+  letter-spacing: 0.05em;
+  color: #f5f7fa;
   white-space: nowrap;
 }
 .marquee-dot {
-  font-size: clamp(1.05rem, 2.6vw, 1.7rem);
-  color: var(--violet-light);
+  font-size: 0.8rem;
+  color: rgba(245, 247, 250, 0.55);
 }
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
@@ -246,6 +247,7 @@ a { color: inherit; }
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 3rem;
 }
 
