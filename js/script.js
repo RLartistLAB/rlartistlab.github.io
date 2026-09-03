@@ -61,6 +61,42 @@ if (contactForm && formNote) {
   });
 }
 
+// CTA del Hero: destino aleatorio, evitando repetir el mismo dos veces seguidas
+function heroPickRandomDestination(storageKey, options) {
+  const lastKey = 'heroLastDestination_' + storageKey;
+  const last = sessionStorage.getItem(lastKey);
+  let choices = options;
+  if (options.length > 1 && last !== null) {
+    choices = options.filter((opt) => opt !== last);
+  }
+  const next = choices[Math.floor(Math.random() * choices.length)];
+  sessionStorage.setItem(lastKey, next);
+  return next;
+}
+
+function heroSetupRandomCta(buttonId, storageKey, options) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const destination = heroPickRandomDestination(storageKey, options);
+    window.location.href = destination;
+  });
+}
+
+heroSetupRandomCta('heroBtnAprender', 'aprender', [
+  '#cursos',
+  '#guias',
+  '#tutoriales',
+  'servicio-clases-1a1.html'
+]);
+
+heroSetupRandomCta('heroBtnDesarrollar', 'desarrollar', [
+  '#servicios',
+  '#samples'
+]);
+
 // Preview de audio (SoundCloud): botón de play manual sobre la portada del sample pack
 document.querySelectorAll('.pack-art-real[data-track]').forEach(art => {
   const playBtn = art.querySelector('.preview-play');
