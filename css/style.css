@@ -206,6 +206,42 @@ a { color: inherit; }
   font-size: 0.72rem;
 }
 
+/* ============================================
+   CINTA DE TEXTO (MARQUEE)
+   ============================================ */
+.marquee {
+  overflow: hidden;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.1rem 0;
+}
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 2.2rem;
+  animation: marquee-scroll 24s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-item {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.6vw, 1.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.marquee-dot {
+  font-size: clamp(1.05rem, 2.6vw, 1.7rem);
+  color: var(--violet-light);
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .hero-cta {
   display: flex;
   gap: 1rem;
