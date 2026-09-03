@@ -223,7 +223,7 @@ a { color: inherit; }
   align-items: center;
   width: max-content;
   gap: 1.4rem;
-  animation: marquee-scroll 24s linear infinite;
+  animation: marquee-scroll 65s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-item {
