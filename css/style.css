@@ -1174,3 +1174,30 @@ a:focus-visible, button:focus-visible {
   .hero-cta { gap: 0.7rem; }
   .filters { gap: 0.5rem; }
 }
+
+/* ============================================
+   SCROLL REVEAL (clases inyectadas por script.js)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-up    { transform: translateY(28px); }
+.reveal-left  { transform: translateX(-28px); }
+.reveal-right { transform: translateX(28px); }
+.reveal-scale { transform: translateY(18px) scale(0.94); }
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Parallax sutil (transform aplicado vía JS con requestAnimationFrame) */
+.parallax-el { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none !important; }
+  .parallax-el { transform: none !important; }
+}
