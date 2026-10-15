@@ -157,12 +157,14 @@ a { color: inherit; }
   isolation: isolate;
   overflow: hidden;
   max-width: none;
+  min-height: min(78vh, 720px);
   margin: 0 auto;
   padding: 5.5rem 1.5rem 4rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 /* Video de fondo del Hero */
