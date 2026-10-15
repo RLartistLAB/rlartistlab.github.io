@@ -21,25 +21,42 @@ if (navToggle && siteNav) {
   });
 }
 
-// Filtro de Sample Packs
-const filterButtons = document.querySelectorAll('.filter-btn');
-const packCards = document.querySelectorAll('.pack-card');
+// Filtros de Cursos y Samplepacks: cada grupo filtra solo las tarjetas de su propia sección
+document.querySelectorAll('#cursos .filters, #samples .filters').forEach((group) => {
+  const section = group.closest('.section');
+  const buttons = group.querySelectorAll('.filter-btn[data-filter]');
+  const cards = section.querySelectorAll('.pack-card');
 
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    const filter = btn.dataset.filter;
-    packCards.forEach(card => {
-      const match = filter === 'todos' || card.dataset.genre === filter;
-      card.style.display = match ? '' : 'none';
+      const filter = btn.dataset.filter;
+      let visibleReal = 0;
+
+      cards.forEach((card) => {
+        const key = card.dataset.genre || card.dataset.category;
+        const match = filter === 'todos' || key === filter;
+        card.style.display = match ? '' : 'none';
+        if (match && key) visibleReal++;
+      });
+
+      // Si el filtro todavía no tiene ninguna tarjeta real (ej. un género sin pack),
+      // se muestra un único "Próximamente" para que la grilla no quede vacía
+      if (filter !== 'todos' && visibleReal === 0) {
+        const placeholder = section.querySelector('.pack-card-empty');
+        if (placeholder) placeholder.style.display = '';
+      }
+
+      // Recalcular el parallax de las imágenes que reaparecen
+      window.dispatchEvent(new Event('scroll'));
     });
   });
 });
 
-// Botones de navegación (Cursos y Guías): marcar como activo el seleccionado
-document.querySelectorAll('#cursos .filters, #guias .filters').forEach(group => {
+// Botones de navegación (Guías): marcar como activo el seleccionado
+document.querySelectorAll('#guias .filters').forEach(group => {
   const links = group.querySelectorAll('.filter-btn:not(.filter-btn-disabled)');
   links.forEach(link => {
     link.addEventListener('click', () => {
@@ -284,6 +301,7 @@ if (pdfModal && btnVerPrograma) {
       const viewportH = window.innerHeight;
       parallaxTargets.forEach((item) => {
         const rect = item.el.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) return; // elemento oculto por un filtro
         // Solo calculamos/aplicamos para elementos cerca del viewport (rendimiento)
         if (rect.bottom < -200 || rect.top > viewportH + 200) return;
         const distanceFromCenter = (rect.top + rect.height / 2) - viewportH / 2;
@@ -311,4 +329,17 @@ if (pdfModal && btnVerPrograma) {
 
     updateParallax();
   }
+})();
+
+// Video de fondo del Hero: se pausa si el usuario prefiere menos movimiento
+(function () {
+  const heroVideo = document.querySelector('.hero-video');
+  if (!heroVideo) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+    return;
+  }
+  const playing = heroVideo.play();
+  if (playing && typeof playing.catch === 'function') playing.catch(() => {});
 })();
